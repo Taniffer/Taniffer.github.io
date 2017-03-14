@@ -1,11 +1,19 @@
 /**
  * Created by 11275 on 2017/3/12.
  */
+
+documentwidth = window.screen.availWidth;
+gridwidth = 0.92 * documentwidth;
+cellwidth = 0.18 * documentwidth;
+cellspace = 0.04 * documentwidth;
+
+
+
 function getcelltop(i,j){
-    return i*120+20;
+    return i*(cellspace+cellwidth)+cellspace;
 }
 function getcellleft(i,j){
-    return j*120+20;
+    return j*(cellspace+cellwidth)+cellspace;
 }
 function getcellcolor (number){
     return "white";
@@ -43,9 +51,11 @@ function nospace(board){
 function canmoveleft(board){
     for (var i = 0; i < 4; i ++)
         for (var j = 1; j < 4; j ++){
-            if (board[i][j-1] == 0 || board[i][j-1] == board[i][j]){
-                return true;
-                break;
+            if (board[i][j]!=0) {
+                if (board[i][j - 1] == 0 || board[i][j - 1] == board[i][j]) {
+                    return true;
+                    break;
+                }
             }
                 }
     return false;
@@ -55,9 +65,11 @@ function canmoveleft(board){
 function canmoveup(board){
     for (var i = 1; i < 4; i ++)
         for (var j = 0; j < 4; j ++){
-            if (board[i-1][j] == 0 || board[i-1][j] == board[i][j]){
-                return true;
-                break;
+            if (board[i][j]!=0) {
+                if (board[i - 1][j] == 0 || board[i - 1][j] == board[i][j]) {
+                    return true;
+                    break;
+                }
             }
                 }
     return false;
@@ -67,9 +79,11 @@ function canmoveup(board){
 function canmoveright(board){
     for (var i = 0; i < 4; i ++)
         for (var j = 2; j >= 0; j --){
-            if (board[i][j+1] == 0 || board[i][j+1] == board[i][j]){
-                return true;
-                break;
+            if (board[i][j]!=0) {
+                if (board[i][j + 1] == 0 || board[i][j + 1] == board[i][j]) {
+                    return true;
+                    break;
+                }
             }
                 }
     return false;
@@ -79,19 +93,31 @@ function canmoveright(board){
 
 function canmovedown(board){
     for (var i = 2; i >= 0; i --)
-        for (var j = 1; j < 4; j ++){
-            if(board[i+1][j] == 0 || board[i+1][j] == board[i][j]){
-                return true;
-                break;
+        for (var j = 0; j < 4; j ++){
+            if (board[i][j]!=0) {
+                if (board[i + 1][j] == 0 || board[i + 1][j] == board[i][j]) {
+                    return true;
+                    break;
+                }
             }
                 }
     return false;
 
 }
 
-function noobstacle(col,raw1 ,raw2 ,board){
+function noobstaclecol(col,raw1 ,raw2 ,board){
     for (var i = raw1 + 1; i < raw2; i ++  ){
         if (board[col][i] != 0){
+            return false;
+            break;
+        }
+    }
+    return true;
+}
+
+function noobstacleraw(raw,col1 ,col2 ,board){
+    for (var i = col1 + 1; i < col2; i ++  ){
+        if (board[i][raw] != 0){
             return false;
             break;
         }
