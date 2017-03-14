@@ -9,7 +9,7 @@ header h1{
     font-size: 40px;
     font-weight:bolder;
 
-    margin: 20px auto;
+    margin: 10px auto;
 
 }
 header #newgamebutton{
@@ -17,7 +17,7 @@ header #newgamebutton{
     background-color: burlywood;
     border-radius: 10px;
     display: block;
-    margin: 10px auto;
+    margin: 5px auto;
     padding: 10px 10px;
 
     font-family: Arial;
@@ -28,7 +28,7 @@ header #newgamebutton{
 header p {
     font-family: Arial;
     font-size: larger;
-    margin: 20px auto;
+    margin: 5px auto;
 }
 #newgamebutton:hover{
     background-color: tan;
