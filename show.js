@@ -12,8 +12,6 @@ function shownumber(i,j,number){
     numbercell.animate({
         width:cellwidth,
         height:cellwidth,
-        lineHeight:cellwidth,
-        fontSize:0.6*cellwidth,
         top:getcelltop(i,j),
         left:getcellleft(i,j)
     },50)
