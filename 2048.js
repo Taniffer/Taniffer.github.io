@@ -151,6 +151,7 @@ function randomanumber(){
 $(document).keydown(function (event){
     switch (event.keyCode){
         case 37 ://left
+            event.preventDefault();
             if (canmoveleft(board)){
                 moveleft();
                 setTimeout("randomanumber()",200);
@@ -159,6 +160,7 @@ $(document).keydown(function (event){
             break;
 
         case 38 ://up
+            event.preventDefault();
             if (canmoveup(board)){
                 moveup();
                 setTimeout("randomanumber()",200);
@@ -167,6 +169,7 @@ $(document).keydown(function (event){
             break;
 
         case 39 ://right
+            event.preventDefault();
             if (canmoveright(board)){
                 moveright();
                 setTimeout("randomanumber()",200);
@@ -175,6 +178,7 @@ $(document).keydown(function (event){
             break;
 
         case 40 ://down
+            event.preventDefault();
             if (canmovedown(board)){
                 movedown();
                 setTimeout("randomanumber()",200);
@@ -190,6 +194,9 @@ document.addEventListener('touchstart',function(event){
     startx = event.touches[0].pageX;
     starty = event.touches[0].pageY;
 
+})
+document.addEventListener('touchmove',function(event){
+    event.preventDefault();
 })
 
 document.addEventListener('touchend',function(event){
