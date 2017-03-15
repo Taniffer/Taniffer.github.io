@@ -206,7 +206,7 @@ document.addEventListener('touchend',function(event){
     var detax = endx - startx;
     var detay = endy - starty;
 
-    if(Math.abs(detax) <0.3 * gridwidth && Math.abs(detay) < 0.3 * gridwidth)
+    if(Math.abs(detax) <0.12 * gridwidth && Math.abs(detay) < 0.12 * gridwidth)
     return;
 
     if(Math.abs(detax) >= Math.abs(detay)){
