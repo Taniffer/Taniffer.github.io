@@ -64,7 +64,7 @@ function analysis(){
 
       //匹配中文模式
       var text = stringArray[i];
-      text = text.match(/^([\u4e00-\u9fa5，\sa-zA-Z——]+)\((.+)\)[\s\S]+?#(\d+)[-\u4e00-\u9fa5].*?\|.*?(\d+[\u4e00-\u9fa50-9\s\:]+)\n[\n\s]*([\s\S]*)$/);
+      text = text.match(/^([\s\S]+?)\((.+)\)[\s\S]+?#(\d+)[-\u4e00-\u9fa5].*?\|.*?(\d+[\u4e00-\u9fa50-9\s\:]+)\n[\n\s]*([\s\S]*)$/);
       if(text!=null){
          title =text[1];
          author = text[2];
@@ -100,7 +100,7 @@ function analysis(){
          console.log(stringArray[i]);
        //匹配英文模式
        var textEnglish =  stringArray[i];
-          textEnglish=textEnglish.match(/^([\u4e00-\u9fa5，\sa-zA-Z——]+)\((.+)\)[\s\S]+?(\d+)[\s\S]+?on\s+([\s\S]+?)\n[\n\s]*([\s\S]*)$/);
+          textEnglish=textEnglish.match(/^([\s\S]+?)\((.+)\)[\s\S]+?(\d+)[\s\S]+?on\s+([\s\S]+?)\n[\n\s]*([\s\S]*)$/);
 
        if(textEnglish!=null){
           title =textEnglish[1];
