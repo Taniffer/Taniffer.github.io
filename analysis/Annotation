@@ -156,7 +156,7 @@ function main(){
   //  var contain=document.getElementById('contain');
   //  contain.innerHTML=mark;
     console.log(mark);
-  }
+  //}
 }
 
 function getMonth(timeData){
