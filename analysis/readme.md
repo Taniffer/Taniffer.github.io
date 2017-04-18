@@ -1,0 +1,1 @@
+将kindle的mycliping文件解析为正常文本
