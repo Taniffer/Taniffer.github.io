@@ -1,17 +1,17 @@
-#解析字符串
+# 解析字符串
 将kindle的mycliping文件解析为正常文本
-##目标
+## 目标
 完成解析 Mycliping.txt的任务，将标记规范的输出。 技术实现上，这里主要着重利用正则解析给定的字
 符串（省去通过 FileReader Api来读取文件这一步骤）。
 
-##要求
+## 要求
 1. 考虑到系统切换为英文的情况，中间关于标记位置与时间的部分变为英文。考虑到解析英文可加分 "‑ Your Highlight on
 Location 2619‑2625 | Added on Tuesday, February 21, 2017 1­11­53 AM"
 2. mark中的time，转化为标准的时间格式 YYYY‑MM‑DD hh:mm:ss，月份与年份如果为个位数，需要补全十位为0，即5月
 份需显示为05 "2016年5月2日星期一 下午3­08­36" 格式化为 2016‑05‑02 03­08­36
 3. mark中的content为空，则去掉该条记录，以防止空的记录。
 
-##样例待解析字符串
+## 样例待解析字符串
 ````
 var sourceString =
 'H
@@ -36,7 +36,7 @@ There was barely a face to be seen in the school that didn’t look worried and 
 ==========
 '
 ````
-##输出结果
+## 输出结果
 
 ````
 var mark = [
